@@ -1,9 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import {Form} from './Form.js'
+import mailIcon from '../../images/mailicon.svg'
+import lockIcon from '../../images/lockicon.svg'
+import userIcon from '../../images/usericon.svg'
 
 export const Body = (props) => {
   return (
     <BodyContainer>
+      <Form registerVisibility={props.registerVisibility} mailIcon={mailIcon} lockIcon={lockIcon} userIcon={userIcon}></Form>
       <TextContainer>
         <h1>
           We accompany you <br></br>on your way to success
@@ -12,12 +17,12 @@ export const Body = (props) => {
           10 years of experience verify our results.
         </h2>
       </TextContainer>
-      <JoinUs>JOIN US</JoinUs>
+      <JoinUs onClick={props.handleRegisterVisibility}>JOIN US</JoinUs>
     </BodyContainer>
   )
 }
 
-const BodyContainer = styled.body`
+const BodyContainer = styled.div`
   height: 90vh;
   position: relative;
 `
@@ -49,7 +54,7 @@ const TextContainer = styled.div`
     color: #FFF;
     transition: all 0.5s;
     position: absolute;
-    width: 25vh;
+    width: 15vw;
     height: 5vh;
     right: 10%;
     top: 40%;
@@ -57,8 +62,10 @@ const TextContainer = styled.div`
     z-index: 9;
     cursor: pointer;
     letter-spacing: 4px;
-    font-weight: 700;
+    font-weight: bold;
     border: 0;
+    font-size: .9vw;
+    font-style:italic;
     &:before{
       content: '';
       position: absolute;

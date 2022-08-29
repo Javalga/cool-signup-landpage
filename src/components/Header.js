@@ -39,6 +39,7 @@ const Wrapper = styled.div`
   gap: 4%;
   place-items: center;
   img{
+    cursor: pointer;
     width: 7vh;
   } 
 `
@@ -50,11 +51,11 @@ const HeaderSectionContainer = styled.div`
   justify-content: center;
   p{
     font-weight: 500;
-    font-size: 1vw;
-    color: white;
+    font-size: .9vw;
+    color: rgb(255,255,255);
     letter-spacing: 1px;
     &:hover{
-      font-weight: 700;
+      color: rgb(255,255,255,.5);
       cursor: pointer;
     }
   }
