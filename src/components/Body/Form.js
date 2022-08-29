@@ -12,7 +12,7 @@ export const Form = (props) => {
   if (props.registerVisibility === true) {
     return (
       <form>
-        <FormContainer>
+        <FormContainer fadeOut={props.fadeOut}>
           <TitleContainer>
             <h2>Registration Form</h2>
           </TitleContainer>
@@ -64,14 +64,14 @@ export const Form = (props) => {
             </RadioWrapper>
           </RadioRow>
           <CheckboxWrapper>
-            <CheckboxRow>
+            <Checkbox>
               <input type='checkbox'></input>
               <p>I agree with terms and conditions.</p>
-            </CheckboxRow>
-            <CheckboxRow>
+            </Checkbox>
+            <Checkbox>
               <input type='checkbox'></input>
               <p>I want to receive the newsletter</p>
-            </CheckboxRow>
+            </Checkbox>
           </CheckboxWrapper>
           <RegisterButton>
             Register
@@ -86,7 +86,7 @@ const FormContainer = styled.div`
   width: 30%;
   height: 75vh;
   padding: 2%;
-  background-color: rgb(255,255,255,.3);
+  background-color: rgb(255,255,255,.5);
   border: 3px solid white;
   border-radius: 1vw;
   display: grid;
@@ -98,6 +98,8 @@ const FormContainer = styled.div`
   margin: auto;
   left: 15%;
   gap: 2vw;
+  opacity: ${props => props.fadeOut ? '1' : '0'};
+  transition: 500ms ease-in-out opacity;
 `
 
 const TitleContainer = styled.div`
@@ -172,7 +174,7 @@ const CheckboxWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `
-const CheckboxRow = styled.div`
+const Checkbox = styled.div`
   width:100%;
   display:flex;
   align-items: center;
@@ -190,9 +192,9 @@ const RegisterButton = styled.button`
   font-size: 1.2vw;
   font-weight: 700;
   letter-spacing: 1px;
-  background-color: #968C71;
-  border: 3px solid white;
+  background-color: #fff;
+  border: 1px solid black;
   border-radius: 10px;
   cursor: pointer;
-  color: white;
+  color: black;
 `

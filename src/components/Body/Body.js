@@ -8,7 +8,7 @@ import userIcon from '../../images/usericon.svg'
 export const Body = (props) => {
   return (
     <BodyContainer>
-      <Form registerVisibility={props.registerVisibility} mailIcon={mailIcon} lockIcon={lockIcon} userIcon={userIcon}></Form>
+      <Form registerVisibility={props.registerVisibility} mailIcon={mailIcon} lockIcon={lockIcon} userIcon={userIcon} fadeOut={props.fadeOut}></Form>
       <TextContainer>
         <h1>
           We accompany you <br></br>on your way to success
